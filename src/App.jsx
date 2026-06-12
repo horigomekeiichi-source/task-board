@@ -72,9 +72,8 @@ export default function App() {
               <button
                 className={styles.deleteBtn}
                 onClick={() => deleteTask(task.id)}
-                aria-label="削除"
-              >
-                ✕
+                >
+                削除
               </button>
             </li>
           ))}
