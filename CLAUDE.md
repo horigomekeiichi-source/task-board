@@ -68,6 +68,12 @@ npm test
 
 新機能・修正は `feature/` または `fix/` ブランチで作業し、PR を通じて `main` へマージする。
 
+## デプロイ先
+
+https://horigomekeiichi-source.github.io/task-board/
+
+`main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイを実行する。
+
 ## コーディング規約
 
 - コメントは原則不要。変数名・関数名で意図を明示する
