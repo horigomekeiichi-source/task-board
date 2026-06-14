@@ -6,10 +6,13 @@
 
 ## 技術スタック
 
-<!-- プロジェクト開始時に更新してください -->
-- フレームワーク: (未定)
-- 言語: (未定)
-- パッケージマネージャー: (未定)
+- フレームワーク: React 18
+- 言語: JavaScript (JSX)
+- ビルドツール: Vite 5
+- スタイリング: CSS Modules (`*.module.css`)
+- 状態管理: React 組み込み (`useState` / `useEffect`)
+- 永続化: `localStorage`
+- パッケージマネージャー: npm
 
 ## 開発コマンド
 
@@ -74,8 +77,36 @@ https://horigomekeiichi-source.github.io/task-board/
 
 `main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイを実行する。
 
+## 命名規約
+
+### コンポーネント
+
+| 対象 | 規約 | 例 |
+|---|---|---|
+| コンポーネント関数 | PascalCase | `TaskItem`, `AddTaskForm` |
+| コンポーネントファイル | PascalCase + `.jsx` | `TaskItem.jsx` |
+| CSS Modules ファイル | コンポーネント名と同名 + `.module.css` | `TaskItem.module.css` |
+| CSS クラス名 | camelCase | `.taskText`, `.deleteBtn` |
+| Props / 変数 | camelCase | `isCompleted`, `onDelete` |
+| イベントハンドラ | `handle` プレフィックス | `handleKeyDown`, `handleSubmit` |
+| コールバック Props | `on` プレフィックス | `onAdd`, `onToggle`, `onDelete` |
+
+### ファイル構成
+
+新しいコンポーネントは `src/components/` 以下に配置する。
+
+```
+src/
+  components/
+    TaskItem.jsx
+    TaskItem.module.css
+  App.jsx
+  App.module.css
+  main.jsx
+  index.css
+```
+
 ## コーディング規約
 
 - コメントは原則不要。変数名・関数名で意図を明示する
-- 型安全を優先し、`any` 型の使用は避ける
 - セキュリティ: ユーザー入力は必ずバリデーションを行う
